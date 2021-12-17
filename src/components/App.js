@@ -7,30 +7,9 @@ import './App.css'
 class App extends React.Component{
         constructor(props){
             super(props);
-            this.state = { 
-                names: [
-                    {
-                        id: 0,
-                        name: 'John'
-                    },
-                    {
-                        id: 1,
-                        name: 'Sam'
-                    }
-                ],
-                tempValue: ''
-            }
+            this.state = { }
         }
 
-        onSubmit = (e) => {
-            e.preventDefault();
-            
-        }
-
-        onChange = (e) => {
-            this.setState({ tempValue: e.target.value})
-            console.log(this.state.tempValue)
-        }
       
     
         
@@ -38,8 +17,8 @@ class App extends React.Component{
     render(){
     return(
         <div>
-            <Comp1 names = {this.state.names}/>
-            <Input value={this.state.names[0]} onChange={this.onChange} tempValue={this.state.tempValue} onSubmit={this.onSubmit}/>
+            <Comp1/> 
+            <Input />
         </div>
         )
     }
