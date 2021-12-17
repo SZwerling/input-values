@@ -7,37 +7,38 @@ class Input extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            temp: ''
+            name: ''
         }
+        
     }
 
    handleSubmit = (e) => {
        e.preventDefault();
-    console.log(e);
+       this.props.selectedName(this.state.name)
+       this.setState({ name: '' })
    }
 
     onChange = (e) => {
-        this.setState({ temp: e.target.value})
+        this.setState({ name: e.target.value })
     }
   
 
     render(){
-        console.log(selectedName)
+        console.log(this.props.selectedNames)
         return(
             <form onSubmit={this.handleSubmit}>
-                <input onChange={this.onChange} type="text" value={this.state.temp}></input>
+                <input onChange={this.onChange} type="text" value={this.state.name}></input>
                 <div>input comp</div>
             </form>
         )
     }
 }
 
-const mapDispatchToProps = {
-    selectedName: (name) => (selectedName(name))
-};
 
-const mapDispatchToProps = {
-    temp: (temp) => 
+const mapStateToProps = (state) => {
+    return { selectedNames: state.selectedNames }
 }
 
-export default connect(null, mapDispatchToProps)(Input);
+
+
+export default connect(mapStateToProps, { selectedName })(Input);

@@ -1,4 +1,4 @@
-export const selectedName = (name) => {
+export const selectedName = name => {
     return {
         type: 'SELECTED_NAME',
         payload: name

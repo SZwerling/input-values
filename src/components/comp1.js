@@ -9,10 +9,10 @@ class Comp1 extends React.Component{
      
     
     render(){
-        console.log(this.props)  
+        
         
         return(
-            <div>names</div>
+            <div>{this.props.names.length}</div>
         )
     }
 }
