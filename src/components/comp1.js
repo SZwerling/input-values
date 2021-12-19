@@ -9,10 +9,13 @@ class Comp1 extends React.Component{
      
     
     render(){
-        
-        
+        const names = this.props.names.map((name) => {
+            return(
+                <div key={name} onClick={() => console.log(`You clicked ${name}`)}>{name}</div>
+            )
+        })
         return(
-            <div>{this.props.names.length}</div>
+            <div>{names}</div>
         )
     }
 }
