@@ -1,17 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { clickedName } from '../actions';
 
 class Comp1 extends React.Component{
     constructor(props){
         super(props);
     }
 
-     
+     clickName = (name) => {
+        this.props.clickedName(name)
+     }
     
     render(){
         const names = this.props.names.map((name) => {
             return(
-                <div key={name} onClick={() => console.log(`You clicked ${name}`)}>{name}</div>
+                <div key={name} onClick={() => this.clickName(name)}>{name}</div>
             )
         })
         return(
@@ -21,8 +24,10 @@ class Comp1 extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-    return { names: state.selectedNames }
+    return { names: state.selectedNames,
+             oneName: state.clickedName    
+            }
 }
 
 
-export default connect(mapStateToProps)(Comp1);
+export default connect(mapStateToProps, { clickedName: clickedName })(Comp1);

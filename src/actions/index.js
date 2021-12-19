@@ -12,3 +12,10 @@ export const temp = (tempVal) => {
         payload: tempVal
     };
 };
+
+export const clickedName = (name) => {
+    return {
+        type: 'CLICKED_NAME',
+        payload: name
+    }
+}

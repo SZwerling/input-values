@@ -17,7 +17,17 @@ const tempReducer = (tempNames = '', action) => {
     }
 }
 
+const clickedNameReducer = (clickedName = '', action) => {
+    if(action.type === 'CLICKED_NAME'){
+        return action.payload
+    } else {
+        return clickedName
+    }
+
+}
+
 export default combineReducers({
     selectedNames: selectedNameReducer,
-    temp: tempReducer
+    temp: tempReducer,
+    clickedName: clickedNameReducer
 })
