@@ -1,6 +1,7 @@
 import React from 'react';
 import Comp1 from './comp1';
 import Input from './input';
+import OneName from './OneNameComponent';
 import './App.css'
 
 
@@ -19,6 +20,7 @@ class App extends React.Component{
         <div>
             <Comp1/> 
             <Input />
+            <OneName />
         </div>
         )
     }
