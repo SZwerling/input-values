@@ -24,7 +24,7 @@ class Input extends React.Component{
   
 
     render(){
-        console.log(this.props.selectedNames)
+        
         return(
             <form onSubmit={this.handleSubmit}>
                 <input onChange={this.onChange} type="text" value={this.state.name}></input>

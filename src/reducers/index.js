@@ -11,7 +11,7 @@ const selectedNameReducer = (selectedNames = ['tom','sally'], action) => {
 
 const tempReducer = (tempNames = '', action) => {
     if(action.type === 'TEMP'){
-        return tempNames + action
+        return action.payload
     } else {
         return tempNames
     }
@@ -28,6 +28,6 @@ const clickedNameReducer = (clickedName = '', action) => {
 
 export default combineReducers({
     selectedNames: selectedNameReducer,
-    temp: tempReducer,
+    tempReducer: tempReducer,
     clickedName: clickedNameReducer
 })
