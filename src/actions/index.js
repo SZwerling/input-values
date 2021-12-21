@@ -19,3 +19,10 @@ export const clickedName = (name) => {
         payload: name
     }
 }
+
+export const modifyName = name => {
+    return {
+        type: 'MODIFIED_NAME',
+        payload: name
+    }
+}

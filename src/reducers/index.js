@@ -4,7 +4,7 @@ import { combineReducers } from "redux"
 const selectedNameReducer = (selectedNames = ['tom','sally'], action) => {
     if(action.type === 'SELECTED_NAME'){
         return [...selectedNames, action.payload]
-    } else {
+    }  else {
         return selectedNames
     }
 }
@@ -23,11 +23,22 @@ const clickedNameReducer = (clickedName = '', action) => {
     } else {
         return clickedName
     }
+}
 
+const modifyNameReducer = (selectedNames = ['tom','sally'], action) => {
+        if(action.type === 'MODIFIED_NAME'){
+        let temp = [...selectedNames];
+        let ind = temp.findIndex((el) => el === clickedNameReducer);
+        temp[ind] = action.payload;
+        return selectedNames = temp;
+        } else {
+            return selectedNames;
+        }
 }
 
 export default combineReducers({
     selectedNames: selectedNameReducer,
     tempReducer: tempReducer,
-    clickedName: clickedNameReducer
+    clickedName: clickedNameReducer,
+    modifyNameReducer: modifyNameReducer
 })
