@@ -4,23 +4,30 @@ import { temp } from '../actions'
 import { modifyName } from '../actions'
 
 class OneName extends React.Component{
+    constructor(props){
+      super(props);
+      this.state = {
+        name: ''
+      }
+    }
 
-  onChange = (e) => {
-    this.props.temp(e.target.value)
+    onChange = (e) => {
+      this.setState({ name: e.target.value })
   }
 
   onSubmit = (e) => {
     e.prevenDefault();
-    this.props.modifyName(this.props.temp);  
+    this.props.modifyName(this.state.name, this.props.theName)  
+    this.setState({ name: '' })
   }
 
     render(){
-        console.log(this.props.tempReducer)
+
 
             if(this.props.theName.length > 0){
               return  (
                 <form onSubmit={this.onSubmit}>
-                <input onChange={this.onChange} type="text" placeholder={this.props.theName}  value={this.props.tempReducer}></input>
+                <input onChange={this.onChange} type="text" placeholder={this.props.theName}  value={this.state.name}></input>
                 <div>change name</div>
             </form>
               )

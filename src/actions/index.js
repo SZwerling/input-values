@@ -20,9 +20,9 @@ export const clickedName = (name) => {
     }
 }
 
-export const modifyName = name => {
+export const modifyName = (name, previous) => {
     return {
         type: 'MODIFIED_NAME',
-        payload: name
+        payload: [ name, previous ]
     }
 }

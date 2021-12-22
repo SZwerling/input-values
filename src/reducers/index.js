@@ -28,9 +28,9 @@ const clickedNameReducer = (clickedName = '', action) => {
 const modifyNameReducer = (selectedNames = ['tom','sally'], action) => {
         if(action.type === 'MODIFIED_NAME'){
         let temp = [...selectedNames];
-        let ind = temp.findIndex((el) => el === clickedNameReducer);
-        temp[ind] = action.payload;
-        return selectedNames = temp;
+        let ind = temp.findIndex((el) => el === action.payload[1]);
+        temp[ind] = action.payload[0];
+        return console.log(action.payload);
         } else {
             return selectedNames;
         }
