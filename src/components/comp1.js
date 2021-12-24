@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { clickedName } from '../actions';
 
 class Comp1 extends React.Component{
-    constructor(props){
-        super(props);
-    }
+ 
 
      clickName = (name) => {
         this.props.clickedName(name)

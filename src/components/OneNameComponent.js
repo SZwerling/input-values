@@ -4,12 +4,7 @@ import { temp } from '../actions'
 import { modifyName } from '../actions'
 
 class OneName extends React.Component{
-    constructor(props){
-      super(props);
-      this.state = {
-        name: ''
-      }
-    }
+
 
     onChange = (e) => {
       this.props.temp(e.target.value)
